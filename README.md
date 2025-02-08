@@ -111,8 +111,30 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-# Links to Documentation
-- [Technical Documentation](./docs/technical/implementation.md)
+
+```markdown
+## 📚 Documentation
+
+### Technical Documentation
+- [Quantitative Models & Implementation](./docs/technical/quantitative_models.md) - Mathematical models, equations, and implementation details
+- [System Architecture](./docs/technical/implementation.md) - System design and API architecture
+- [Performance Optimization](./docs/technical/performance.md) - High-performance computing and optimization strategies
+
+### API Documentation
+- [REST API Reference](./docs/api/README.md) - Endpoint documentation and usage
+- [WebSocket API](./docs/api/websocket.md) - Real-time data streaming *(Coming Soon)*
+
+### Developer Guides
+- [Getting Started](./docs/development/README.md) - Setup and basic usage
+- [Contributing](./docs/development/CONTRIBUTING.md) - Development guidelines
+- [Testing](./docs/development/testing.md) - Testing procedures and validation
+
+### Research Papers & References
+- [Mathematical Foundation](./docs/research/math_foundation.md) - Theoretical background
+- [Model Validation](./docs/research/validation.md) - Empirical testing and validation
+- [Performance Benchmarks](./docs/research/benchmarks.md) - System performance metrics
+```
+
 
 *(Additional documentation coming soon)*
 
