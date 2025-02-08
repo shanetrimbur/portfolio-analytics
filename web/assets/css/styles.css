@@ -1,0 +1,62 @@
+/* web/assets/css/styles.css */
+.chart-container {
+    min-height: 400px;
+}
+
+.metrics-card {
+    transition: transform 0.2s;
+}
+
+.metrics-card:hover {
+    transform: translateY(-2px);
+}
+
+input[type="number"],
+select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.375rem;
+    background-color: #fff;
+}
+
+input[type="number"]:focus,
+select:focus {
+    outline: none;
+    ring: 2px;
+    ring-color: #3b82f6;
+    border-color: #3b82f6;
+}
+
+.optimize-btn {
+    width: 100%;
+    transition: all 0.2s;
+}
+
+.optimize-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.optimize-btn:active {
+    transform: translateY(0);
+}
+
+/* Custom scrollbar for metrics */
+#metrics-display::-webkit-scrollbar {
+    width: 8px;
+}
+
+#metrics-display::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+#metrics-display::-webkit-scrollbar-thumb {
+    background: #cbd5e0;
+    border-radius: 4px;
+}
+
+#metrics-display::-webkit-scrollbar-thumb:hover {
+    background: #a0aec0;
+}
