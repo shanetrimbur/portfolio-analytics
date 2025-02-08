@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Local development
+.env
+.env.local
+.env.*.local
+
+# Sensitive data
+docs/assets/js/config.js
+**/config.js
+secrets.json
+.env.production
+
+# Dependencies
+node_modules/
+bower_components/
+
+# Build output
+/dist
+/tmp
+/out-tsc
+
+# System Files
+.DS_Store
+Thumbs.db 

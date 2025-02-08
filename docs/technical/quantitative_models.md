@@ -28,8 +28,12 @@ def optimize_portfolio(returns: np.ndarray, target_return: float) -> np.ndarray:
 ```
 
 Mathematical formulation:
-$$ \min_w \sigma^2_p = w^T\Sigma w $$
-$$ \text{subject to: } \sum_{i=1}^n w_i = 1 \text{ and } w^T\mu \geq \mu_{target} $$
+
+$$\min_w \sigma^2_p = w^T\Sigma w$$
+
+Subject to:
+
+$$\sum_{i=1}^n w_i = 1 \text{ and } w^T\mu \geq \mu_{target}$$
 
 ### 2. Risk Analytics
 *Implementation: src/portfolio_analytics/risk_metrics.py*
@@ -43,7 +47,7 @@ def calculate_var(returns: np.ndarray, confidence: float = 0.95) -> float:
     """
 ```
 
-$$ VaR_{\alpha} = -\mu - \sigma\Phi^{-1}(\alpha) $$
+$$\text{VaR}_{\alpha} = -\mu - \sigma\Phi^{-1}(\alpha)$$
 
 #### Expected Shortfall
 ```python
@@ -54,7 +58,7 @@ def calculate_cvar(returns: np.ndarray, confidence: float = 0.95) -> float:
     """
 ```
 
-$$ CVaR_{\alpha} = -\mathbb{E}[R|R \leq -VaR_{\alpha}] $$
+$$\text{CVaR}_{\alpha} = -\mathbb{E}[R|R \leq -\text{VaR}_{\alpha}]$$
 
 ## Planned Implementations (Q2 2024)
 
@@ -63,7 +67,8 @@ $$ CVaR_{\alpha} = -\mathbb{E}[R|R \leq -VaR_{\alpha}] $$
 
 #### Fama-French Five-Factor Model
 Will implement factor decomposition:
-$$ R_i - R_f = \alpha_i + \beta_i(R_m - R_f) + s_iSMB + h_iHML + r_iRMW + c_iCMA + \epsilon_i $$
+
+$$R_i - R_f = \alpha_i + \beta_i(R_m - R_f) + s_i\text{SMB} + h_i\text{HML} + r_i\text{RMW} + c_i\text{CMA} + \epsilon_i$$
 
 Features:
 - Factor exposure calculation
@@ -75,7 +80,8 @@ Features:
 *Planned Implementation: src/portfolio_analytics/fixed_income.py*
 
 #### Yield Curve Analysis
-$$ P = \sum_{t=1}^T \frac{C}{(1+r_t)^t} + \frac{F}{(1+r_T)^T} $$
+
+$$P = \sum_{t=1}^T \frac{C}{(1+r_t)^t} + \frac{F}{(1+r_T)^T}$$
 
 Features:
 - Duration calculation
@@ -87,10 +93,14 @@ Features:
 *Planned Implementation: src/portfolio_analytics/derivatives.py*
 
 #### Black-Scholes Implementation
-$$ C = S_0N(d_1) - Ke^{-rT}N(d_2) $$
+
+$$C = S_0N(d_1) - Ke^{-rT}N(d_2)$$
+
 Where:
-$$ d_1 = \frac{\ln(S_0/K) + (r + \sigma^2/2)T}{\sigma\sqrt{T}} $$
-$$ d_2 = d_1 - \sigma\sqrt{T} $$
+
+$$d_1 = \frac{\ln(S_0/K) + (r + \sigma^2/2)T}{\sigma\sqrt{T}}$$
+
+$$d_2 = d_1 - \sigma\sqrt{T}$$
 
 Features:
 - Greeks calculation (Δ, Γ, Θ, ν, ρ)
@@ -102,7 +112,8 @@ Features:
 
 ### 1. Deep Learning for Asset Pricing
 Neural network architecture for return prediction:
-$$ f(x) = \sigma(\sum_{i=1}^n w_i x_i + b) $$
+
+$$f(x) = \sigma(\sum_{i=1}^n w_i x_i + b)$$
 
 Features:
 - LSTM for time series prediction
@@ -111,8 +122,9 @@ Features:
 
 ### 2. Regime Detection
 Hidden Markov Models for market regimes:
-$$ P(S_t = j|S_{t-1} = i) = a_{ij} $$
-$$ P(O_t|S_t) = \mathcal{N}(\mu_{S_t}, \sigma^2_{S_t}) $$
+
+$$P(S_t = j|S_{t-1} = i) = a_{ij}$$
+$$P(O_t|S_t) = \mathcal{N}(\mu_{S_t}, \sigma^2_{S_t})$$
 
 ## High-Performance Computing
 *Implementation: src/portfolio_analytics/parallel/*
