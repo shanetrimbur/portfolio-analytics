@@ -111,11 +111,10 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-## 📚 Documentation
+# Links to Documentation
+- [Technical Documentation](./docs/technical/implementation.md)
 
-- [API Reference](docs/api.md)
-- [Technical Documentation](docs/technical.md)
-- [Development Guide](docs/development.md)
+*(Additional documentation coming soon)*
 
 ## 🧪 Testing
 
